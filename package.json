@@ -1,0 +1,32 @@
+{
+  "name": "steller-vue-transitions",
+  "version": "0.0.0",
+  "description": "A StellerCSS module for named Vue transition utility classes",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass --update _index.scss:dist/index.css",
+    "build-test": "sass --update __test__/index.scss:__test__/index.css",
+    "test": "yarn build-test && jest __test__ --env=jsdom --verbose --passWithNoTests",
+    "test:watch": "yarn build-test && jest --env=jsdom --watch",
+    "lint": "eslint __test__ --ext .js && stylelint stylelint 'src/**/*.scss'",
+    "lint:fix": "eslint __test__ --ext .js --fix && stylelint stylelint 'src/**/*.scss' --fix --syntax=scss"
+  },
+  "author": "TJ Hillard",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.4.1",
+    "husky": "^1.3.1",
+    "jest": "^24.7.1",
+    "lint-staged": "^8.1.5",
+    "sass": "^1.19.0",
+    "steller-css": "^0.2.0-alpha.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0"
+  },
+  "peerDependencies": {
+    "steller-css": "^0.2.0-alpha.0"
+  }
+}

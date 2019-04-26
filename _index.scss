@@ -1,0 +1,8 @@
+@import './src/functions/map-collect';
+@import './src/index';
+
+$steller-vue-transitions: map-collect(
+  $steller-vue-transitions-flip-list-classes-map,
+  $steller-vue-transitions-fade-classes-map,
+  $steller-vue-transitions-slide-in-classes-map,
+);

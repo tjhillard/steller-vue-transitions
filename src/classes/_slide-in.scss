@@ -1,0 +1,61 @@
+// -----------------------------
+// Slide In
+// -----------------------------
+
+$steller-vue-transitions-slide-in-classes-map: ();
+
+$steller-vue-transitions-speeds: (
+  ("extra-slow", $steller-speed-extra-slow),
+  ("slow", $steller-speed-slow),
+  ("normal", $steller-speed-normal),
+  ("fast", $steller-speed-fast),
+  ("extra-fast", $steller-speed-extra-fast),
+);
+
+// From Top
+@each $speed-name, $speed in $steller-vue-transitions-speeds {
+  $steller-vue-transitions-slide-in-classes-map: map-merge(
+    $steller-vue-transitions-slide-in-classes-map,
+    (
+      'slide-in-from-top-#{$speed-name}-enter': (transform: translateY(-40%), opacity: 0),
+      'slide-in-from-top-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+      'slide-in-from-top-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+    )
+  );
+}
+
+// From Bottom
+@each $speed-name, $speed in $steller-vue-transitions-speeds {
+  $steller-vue-transitions-slide-in-classes-map: map-merge(
+    $steller-vue-transitions-slide-in-classes-map,
+    (
+      'slide-in-from-bottom-#{$speed-name}-enter': (transform: translateY(40%), opacity: 0),
+      'slide-in-from-bottom-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+      'slide-in-from-bottom-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+    )
+  );
+}
+
+// From Right
+@each $speed-name, $speed in $steller-vue-transitions-speeds {
+  $steller-vue-transitions-slide-in-classes-map: map-merge(
+    $steller-vue-transitions-slide-in-classes-map,
+    (
+      'slide-in-from-right-#{$speed-name}-enter': (transform: translateX(40%), opacity: 0),
+      'slide-in-from-right-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+      'slide-in-from-right-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+    )
+  );
+}
+
+// From Left
+@each $speed-name, $speed in $steller-vue-transitions-speeds {
+  $steller-vue-transitions-slide-in-classes-map: map-merge(
+    $steller-vue-transitions-slide-in-classes-map,
+    (
+      'slide-in-from-left-#{$speed-name}-enter': (transform: translateX(-40%), opacity: 0),
+      'slide-in-from-left-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+      'slide-in-from-left-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+    )
+  );
+}

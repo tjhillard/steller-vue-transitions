@@ -1,0 +1,27 @@
+// -----------------------------
+// Fade
+// -----------------------------
+
+$steller-vue-transitions-fade-classes-map: ();
+
+$steller-vue-transitions-speeds: (
+  ("extra-slow", $steller-speed-extra-slow),
+  ("slow", $steller-speed-slow),
+  ("normal", $steller-speed-normal),
+  ("fast", $steller-speed-fast),
+  ("extra-fast", $steller-speed-extra-fast),
+);
+
+@each $speed-name, $speed in $steller-vue-transitions-speeds {
+  $steller-vue-transitions-fade-classes-map: map-merge(
+    $steller-vue-transitions-fade-classes-map,
+    (
+      'fade-#{$speed-name}-enter': (opacity: 0),
+      'fade-#{$speed-name}-enter-to': (opacity: 1),
+      'fade-#{$speed-name}-enter-active': (transition: all #{$speed} ease-out),
+      'fade-#{$speed-name}-leave': (opacity: 1),
+      'fade-#{$speed-name}-leave-active': (transition: all #{$speed} ease-in),
+      'fade-#{$speed-name}-leave-to': (opacity: 0),
+    )
+  );
+}
