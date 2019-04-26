@@ -1,0 +1,11 @@
+$steller-vue-transitions-speeds: (
+  ("extra-slow", $steller-speed-extra-slow),
+  ("slow", $steller-speed-slow),
+  ("normal", $steller-speed-normal),
+  ("fast", $steller-speed-fast),
+  ("extra-fast", $steller-speed-extra-fast),
+);
+
+@import './fade';
+@import './flip-list';
+@import './slide-in';

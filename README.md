@@ -30,7 +30,8 @@ $steller-modules: (
 
 #### Roadmap
 
-* Transform transition speed classes
+* Add more transition types
+* Add distance/intensity variants (.slide-in-from-top-lg)
 
 #### Steller Family
 

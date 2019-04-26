@@ -4,14 +4,6 @@
 
 $steller-vue-transitions-flip-list-classes-map: ();
 
-$steller-vue-transitions-speeds: (
-  ("extra-slow", $steller-speed-extra-slow),
-  ("slow", $steller-speed-slow),
-  ("normal", $steller-speed-normal),
-  ("fast", $steller-speed-fast),
-  ("extra-fast", $steller-speed-extra-fast),
-);
-
 @each $speed-name, $speed in $steller-vue-transitions-speeds {
   $steller-vue-transitions-flip-list-classes-map: map-merge(
     $steller-vue-transitions-flip-list-classes-map,
