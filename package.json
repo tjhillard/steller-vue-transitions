@@ -1,7 +1,7 @@
 {
   "name": "steller-vue-transitions",
   "version": "0.0.0-alpha.0",
-  "description": "A StellerCSS module for named Vue transition utility classes",
+  "description": "A StellerCSS module for named Vue.js transitions",
   "main": "index.js",
   "scripts": {
     "build": "sass --update _index.scss:dist/index.css",
