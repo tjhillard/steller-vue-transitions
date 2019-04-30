@@ -4,50 +4,62 @@
 
 $steller-vue-transitions-slide-in-classes-map: ();
 
-// From Top
-@each $speed-name, $speed in $steller-vue-transitions-speeds {
-  $steller-vue-transitions-slide-in-classes-map: map-merge(
-    $steller-vue-transitions-slide-in-classes-map,
-    (
-      'slide-in-from-top-#{$speed-name}-enter': (transform: translateY(-40%), opacity: 0),
-      'slide-in-from-top-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
-      'slide-in-from-top-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
-    )
-  );
-}
+$steller-vue-transitions-distances: (
+  (xs, $steller-vue-transitions-slide-distance-xs),
+  (sm, $steller-vue-transitions-slide-distance-sm),
+  (md, $steller-vue-transitions-slide-distance-md),
+  (lg, $steller-vue-transitions-slide-distance-lg),
+  (xl, $steller-vue-transitions-slide-distance-xl),
+);
 
-// From Bottom
-@each $speed-name, $speed in $steller-vue-transitions-speeds {
-  $steller-vue-transitions-slide-in-classes-map: map-merge(
-    $steller-vue-transitions-slide-in-classes-map,
-    (
-      'slide-in-from-bottom-#{$speed-name}-enter': (transform: translateY(40%), opacity: 0),
-      'slide-in-from-bottom-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
-      'slide-in-from-bottom-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
-    )
-  );
-}
+@each
+  $distance-label,
+  $distance-value in $steller-vue-transitions-distances {
+  // From Top
+  @each $speed-name, $speed in $steller-vue-transitions-speeds {
+    $steller-vue-transitions-slide-in-classes-map: map-merge(
+      $steller-vue-transitions-slide-in-classes-map,
+      (
+        'slide-in-from-top-#{$distance-label}-#{$speed-name}-enter': (transform: translateY($distance-value * -1), opacity: 0),
+        'slide-in-from-top-#{$distance-label}-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+        'slide-in-from-top-#{$distance-label}-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+      )
+    );
+  }
 
-// From Right
-@each $speed-name, $speed in $steller-vue-transitions-speeds {
-  $steller-vue-transitions-slide-in-classes-map: map-merge(
-    $steller-vue-transitions-slide-in-classes-map,
-    (
-      'slide-in-from-right-#{$speed-name}-enter': (transform: translateX(40%), opacity: 0),
-      'slide-in-from-right-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
-      'slide-in-from-right-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
-    )
-  );
-}
+  // From Bottom
+  @each $speed-name, $speed in $steller-vue-transitions-speeds {
+    $steller-vue-transitions-slide-in-classes-map: map-merge(
+      $steller-vue-transitions-slide-in-classes-map,
+      (
+        'slide-in-from-bottom-#{$distance-label}-#{$speed-name}-enter': (transform: translateY($distance-value), opacity: 0),
+        'slide-in-from-bottom-#{$distance-label}-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+        'slide-in-from-bottom-#{$distance-label}-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+      )
+    );
+  }
 
-// From Left
-@each $speed-name, $speed in $steller-vue-transitions-speeds {
-  $steller-vue-transitions-slide-in-classes-map: map-merge(
-    $steller-vue-transitions-slide-in-classes-map,
-    (
-      'slide-in-from-left-#{$speed-name}-enter': (transform: translateX(-40%), opacity: 0),
-      'slide-in-from-left-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
-      'slide-in-from-left-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
-    )
-  );
+  // From Right
+  @each $speed-name, $speed in $steller-vue-transitions-speeds {
+    $steller-vue-transitions-slide-in-classes-map: map-merge(
+      $steller-vue-transitions-slide-in-classes-map,
+      (
+        'slide-in-from-right-#{$distance-label}-#{$speed-name}-enter': (transform: translateX($distance-value), opacity: 0),
+        'slide-in-from-right-#{$distance-label}-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+        'slide-in-from-right-#{$distance-label}-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+      )
+    );
+  }
+
+  // From Left
+  @each $speed-name, $speed in $steller-vue-transitions-speeds {
+    $steller-vue-transitions-slide-in-classes-map: map-merge(
+      $steller-vue-transitions-slide-in-classes-map,
+      (
+        'slide-in-from-left-#{$distance-label}-#{$speed-name}-enter': (transform: translateX($distance-value * -1), opacity: 0),
+        'slide-in-from-left-#{$distance-label}-#{$speed-name}-enter-to': (transition: all #{$speed} ease-in-out),
+        'slide-in-from-left-#{$distance-label}-#{$speed-name}-enter-active': (transition: all #{$speed} ease-in-out),
+      )
+    );
+  }
 }

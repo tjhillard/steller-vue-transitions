@@ -26,12 +26,68 @@ $steller-modules: (
 @import '~steller-css/index'; // StellerCSS
 ```
 
+## Config
+
+```scss
+$steller-vue-transitions-slide-distance-xs: 1px;
+$steller-vue-transitions-slide-distance-sm: 2px;
+$steller-vue-transitions-slide-distance-md: 4px;
+$steller-vue-transitions-slide-distance-lg: 6px;
+$steller-vue-transitions-slide-distance-xl: 10px;
+```
+
+## Speeds
+
+This module uses the speed variables defined in StellerCSS.
+
+```scss
+$steller-speed-extra-slow: 500ms;
+$steller-speed-slow: 400ms;
+$steller-speed-normal: 300ms;
+$steller-speed-fast: 200ms;
+$steller-speed-extra-fast: 100ms;
+```
+
+## Utility Classes
+
+### Slide In
+
+```html
+<transition name="slide-in-from-{$direction}-{$distance}-{$speed}">
+  //
+</transition>
+```
+
+* Directions: ('top', 'right', 'bottom', 'left')
+* Distances: ('xs', 'sm', 'md', 'lg', 'xl')
+* Speeds: ('extra-slow', 'slow', 'normal', 'fast', 'extra-fast')
+
+### Fade
+
+```html
+<transition name="fade={$speed}">
+  //
+</transition>
+```
+
+* Speeds: ('extra-slow', 'slow', 'normal', 'fast', 'extra-fast')
+
+### Flip
+
+```html
+<transition name="flip-list-{$speed}">
+  //
+</transition>
+```
+
+* Speeds: ('extra-slow', 'slow', 'normal', 'fast', 'extra-fast')
+
 ---
 
 #### Roadmap
 
 * Add more transition types
-* Add distance/intensity variants (.slide-in-from-top-lg)
+* Tests
 
 #### Steller Family
 
