@@ -65,7 +65,7 @@ $steller-speed-extra-fast: 100ms;
 ### Fade
 
 ```html
-<transition name="fade={$speed}">
+<transition name="fade-{$speed}">
   //
 </transition>
 ```
